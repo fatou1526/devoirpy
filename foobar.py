@@ -10,6 +10,8 @@ class DitSeries:
         - le contenu de la colonne sous forme de Dictionnaire
         - La clé du Dictionnaire est un entier
         - La valeur du Dictionnaire est de n'importe quel type"""
+        self.name = name
+        self.data = data  
 
     def __mul__(self, other: int) -> "DitSeries":
         """ Implementation de l'opération de multiplication.

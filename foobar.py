@@ -71,7 +71,7 @@ class DitSeries:
         return f"<DitSeries: {self.name} {self.data}>"
 
 
-class DitDataFrame:
+class DitDataFrame:  
     """ """
     def __init__(self, d: t.Dict[str, t.List[t.Any]]):
         """ Constructeur prenant un seul parametre
@@ -83,6 +83,9 @@ class DitDataFrame:
         - self.series_map, correspondra à un dictionnaire de type DitSeries
         - self.length, la longueur du DataFrame
         """
+        self.d = d
+        self.series_map = DitSeries("serie", {0: "foo", 1: "bar", 2: "baz"})
+        self.length = len(d) 
 
 
     def __getitem__(self, key: str) -> DitSeries:

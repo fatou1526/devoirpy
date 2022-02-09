@@ -19,11 +19,10 @@ class DitSeries:
         - La valeur renvoyée est de type DitSeries
         - Chaque élément de la série est multiplié par l'argument
         """
-        result = {}
+
         for cle in self.data.keys():
             self.data[cle] = self.data[cle] * other
-            result[cle].append(self.data[cle])
-        return result
+        return self.data
             
             
 
@@ -33,18 +32,24 @@ class DitSeries:
         - La valeur renvoyée est de type DitSeries
         - Chaque élément de la série est divisé par l'argument
         """
-        result_div = {}
+        
+        
         for cle in self.data.keys():
             self.data[cle] = self.data[cle] * other
-            result_div[cle].append(self.data[cle])
-        return result_div
+        return self.data
 
     def __sub__(self, other: int) -> "DitSeries":
         """Soustraction """
+        for cle in self.data.keys():
+            self.data[cle] = self.data[cle] - other
+        return self.data
 
 
     def __add__(self, other: int) -> "DitSeries":
         """Addition"""
+        for cle in self.data.keys():
+            self.data[cle] = self.data[cle] + other
+        return self.data
 
     def __gt__(self, other: int) -> "DitSeries":
         """Comparaison (supérieur) """

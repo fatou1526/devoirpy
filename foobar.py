@@ -19,6 +19,13 @@ class DitSeries:
         - La valeur renvoyée est de type DitSeries
         - Chaque élément de la série est multiplié par l'argument
         """
+        result = {}
+        for cle in self.data.keys():
+            self.data[cle] = self.data[cle] * other
+            result[cle].append(self.data[cle])
+        return result
+            
+            
 
     def __div__(self, other: int) -> "DitSeries":
         """ Implementation de l'opération de division.

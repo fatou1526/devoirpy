@@ -53,9 +53,18 @@ class DitSeries:
 
     def __gt__(self, other: int) -> "DitSeries":
         """Comparaison (supérieur) """
+        for cle in self.data.keys():
+            if self.data[cle] > other:
+                self.data[cle] = "True"
+            else:
+                self.data[cle] = "False"
+        return self.data
+    
 
     def __getitem__(self, key: "DitSeries") -> "DitSeries":
-        """ """
+        
+        """ retourne l'element qui a pour clef key """
+        return self.data[key]
 
     def __repr__(self) -> str:
         """ Affiche une representation de l'objet DitSeries. """

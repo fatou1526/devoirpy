@@ -33,6 +33,11 @@ class DitSeries:
         - La valeur renvoyée est de type DitSeries
         - Chaque élément de la série est divisé par l'argument
         """
+        result_div = {}
+        for cle in self.data.keys():
+            self.data[cle] = self.data[cle] * other
+            result_div[cle].append(self.data[cle])
+        return result_div
 
     def __sub__(self, other: int) -> "DitSeries":
         """Soustraction """
